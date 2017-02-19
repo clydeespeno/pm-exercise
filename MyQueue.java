@@ -9,16 +9,16 @@ import java.util.Stack;
  * as we can as long as the out is not empty, and only refill it when it's empty and when an operation to
  * dequeue it is invoked.
  */
-public class MyQueue<E> {
+public class MyQueue<T> {
 
-  private Stack<E> in = new Stack<>();
-  private Stack<E> out = new Stack<>();
+  private Stack<T> in = new Stack<>();
+  private Stack<T> out = new Stack<>();
 
-  void queue(E e) {
-    in.push(e);
+  void queue(T t) {
+    in.push(t);
   }
 
-  E dequeue() {
+  T dequeue() {
     if (out.isEmpty()) {
       while(!in.isEmpty()) {
         out.push(in.pop());
